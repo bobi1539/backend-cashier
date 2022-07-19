@@ -55,7 +55,7 @@ public class DriverController {
     }
 
     @PutMapping("/{driverId}")
-    public ResponseEntity<?> updateDriver(@Valid @PathVariable Long driverId, @RequestBody DriverRequest request, Errors errors){
+    public ResponseEntity<?> updateDriver(@PathVariable Long driverId, @Valid @RequestBody DriverRequest request, Errors errors){
         List<String> messages = new ArrayList<>();
         if(errors.hasErrors()){
             for(ObjectError error : errors.getAllErrors()){
